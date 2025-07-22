@@ -1,0 +1,75 @@
+{
+    "city_ids": ["1"],
+    "disable_recommendation": false,
+    "map_state": {
+        "camera_info": {
+            "bbox": {
+                "min_latitude": 35.56098556518555,
+                "min_longitude": 51.09297561645508,
+                "max_latitude": 35.8353385925293,
+                "max_longitude": 51.6052131652832
+            },
+            "place_hash": "1||residential-rent",
+            "zoom": 10.690587856504465
+        },
+        "page_state": "HALF_STATE"
+    },
+    "search_data": {
+        "form_data": {
+            "data": {
+                "bbox": {
+                    "repeated_float": {
+                        "value": [
+                            { "value": 51.0929756 },
+                            { "value": 35.5609856 },
+                            { "value": 51.6052132 },
+                            { "value": 35.8353386 }
+                        ]
+                    }
+                },
+                "credit": {
+                    "number_range": {
+                        "maximum": "300000000"
+                    }
+                },
+                "parking": {
+                    "boolean": {
+                        "value": true
+                    }
+                },
+                "recent_ads": {
+                    "str": {
+                        "value": "12h"
+                    }
+                },
+                "rent": {
+                    "number_range": {
+                        "maximum": "15000000"
+                    }
+                },
+                "rooms": {
+                    "repeated_string": {
+                        "value": ["دو"]
+                    }
+                },
+                "category": {
+                    "str": {
+                        "value": "residential-rent"
+                    }
+                }
+            }
+        },
+        "server_payload": {
+            "@type": "type.googleapis.com/widgets.SearchData.ServerPayload",
+            "additional_form_data": {
+                "data": {
+                    "sort": {
+                        "str": {
+                            "value": "sort_date"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
