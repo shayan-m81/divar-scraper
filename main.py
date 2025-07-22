@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import smtplib
@@ -7,9 +8,9 @@ from datetime import datetime
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USERNAME = "shayanmontazeri81@gmail.com"
-SMTP_PASSWORD = "uueqzxkqqrdrukwn"
-TO_EMAIL = "shayanmontazeri81@gmail.com"
+SMTP_USERNAME = os.environ.get("SMTP_USERNAME")
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
+TO_EMAIL = os.environ.get("TO_EMAIL")
 
 DIVAR_URL = "https://api.divar.ir/v8/postlist/w/search"
 HEADERS = {
