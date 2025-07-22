@@ -11,7 +11,7 @@ SMTP_PORT = 587
 SMTP_USERNAME = os.environ.get("SMTP_USERNAME")
 SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
 TO_EMAILS = os.environ.get("TO_EMAILS")
-to_emails = [email.strip() for email in TO_EMAIL.split(",")]
+to_emails = [email.strip() for email in TO_EMAILS.split(",")]
 
 DIVAR_URL = "https://api.divar.ir/v8/postlist/w/search"
 HEADERS = {
