@@ -10,7 +10,8 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USERNAME = os.environ.get("SMTP_USERNAME")
 SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
-TO_EMAIL = os.environ.get("TO_EMAIL")
+TO_EMAILS = os.environ.get("TO_EMAILS")
+to_emails = [email.strip() for email in TO_EMAIL.split(",")]
 
 DIVAR_URL = "https://api.divar.ir/v8/postlist/w/search"
 HEADERS = {
@@ -113,7 +114,7 @@ def send_email(new_ads):
         f"🏠 آگهی‌های جدید دیوار - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     )
     msg["From"] = SMTP_USERNAME
-    msg["To"] = TO_EMAIL
+    msg["To"] = TO_EMAILS
 
     text_content = "\n\n".join(
         [
@@ -147,7 +148,7 @@ def send_email(new_ads):
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
             server.login(SMTP_USERNAME, SMTP_PASSWORD)
-            server.sendmail(SMTP_USERNAME, TO_EMAIL, msg.as_string())
+            server.sendmail(SMTP_USERNAME, to_emails, msg.as_string())
         print("📧 ایمیل با موفقیت ارسال شد.")
     except Exception as e:
         print(f"❌ خطا در ارسال ایمیل: {e}")
