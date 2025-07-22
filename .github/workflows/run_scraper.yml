@@ -23,4 +23,8 @@ jobs:
           pip install requests
 
       - name: Run scraper script
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
         run: python divar_scraper.py
