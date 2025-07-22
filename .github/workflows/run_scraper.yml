@@ -26,5 +26,5 @@ jobs:
         env:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          TO_EMAIL: ${{ secrets.TO_EMAILS }}
         run: python main.py
