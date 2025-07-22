@@ -3,7 +3,7 @@ name: Run Divar Scraper Every 3 Hours
 on:
   schedule:
     - cron: '0 */3 * * *'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   run_scraper:
