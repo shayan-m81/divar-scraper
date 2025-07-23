@@ -5,15 +5,21 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
+import pytz
 
+# SMTP Settings
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USERNAME = os.environ.get("SMTP_USERNAME")
 SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
-TO_EMAILS = os.environ.get("TO_EMAILS")
-to_emails = [email.strip() for email in TO_EMAILS.split(",")]
+
+# Read comma-separated emails from environment
+TO_EMAILS = os.environ.get("TO_EMAILS", "")
+to_emails = [email.strip() for email in TO_EMAILS.split(",") if email.strip()]
+
 AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
 
+# Divar API settings
 DIVAR_URL = "https://api.divar.ir/v8/postlist/w/search"
 HEADERS = {
     "Content-Type": "application/json",
@@ -22,7 +28,6 @@ HEADERS = {
 }
 
 SEEN_FILE = "seen_ads.json"
-
 FILTER_KEYWORDS = ["همخونه", "هم‌خونه"]
 
 
@@ -71,7 +76,6 @@ def fetch_ads():
         return []
 
     ads = []
-
     widgets = data.get("list_widgets", [])
     for widget in widgets:
         if widget.get("widget_type") == "POST_ROW":
@@ -92,18 +96,16 @@ def fetch_ads():
                 continue
 
             if token and title:
-                ads.append(
-                    {
-                        "id": token,
-                        "title": title,
-                        "district": district,
-                        "city": city,
-                        "image_url": image_url,
-                        "deposit": deposit,
-                        "rent": rent,
-                        "url": f"https://divar.ir/v/{token}",
-                    }
-                )
+                ads.append({
+                    "id": token,
+                    "title": title,
+                    "district": district,
+                    "city": city,
+                    "image_url": image_url,
+                    "deposit": deposit,
+                    "rent": rent,
+                    "url": f"https://divar.ir/v/{token}",
+                })
 
     print(f"Extracted {len(ads)} ads from posts (after filtering)")
     return ads
@@ -111,18 +113,15 @@ def fetch_ads():
 
 def send_email(new_ads):
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = (
-        f"🏠 آگهی‌های جدید دیوار - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
-    )
+    tehran_time = datetime.now(pytz.timezone("Asia/Tehran"))
+    msg["Subject"] = f"🏠 آگهی‌های جدید دیوار - {tehran_time.strftime('%Y-%m-%d %H:%M')}"
     msg["From"] = SMTP_USERNAME
-    msg["To"] = TO_EMAILS
+    msg["To"] = ", ".join(to_emails)
 
-    text_content = "\n\n".join(
-        [
-            f"{ad['title']} - {ad['district']} - {ad['city']}\nودیعه: {ad['deposit']}\nاجاره: {ad['rent']}\n{ad['url']}"
-            for ad in new_ads
-        ]
-    )
+    text_content = "\n\n".join([
+        f"{ad['title']} - {ad['district']} - {ad['city']}\nودیعه: {ad['deposit']}\nاجاره: {ad['rent']}\n{ad['url']}"
+        for ad in new_ads
+    ])
 
     html_content = "<h2>آگهی‌های جدید دیوار:</h2><ul>"
     for ad in new_ads:
@@ -139,11 +138,8 @@ def send_email(new_ads):
         """
     html_content += "</ul>"
 
-    part1 = MIMEText(text_content, "plain", "utf-8")
-    part2 = MIMEText(html_content, "html", "utf-8")
-
-    msg.attach(part1)
-    msg.attach(part2)
+    msg.attach(MIMEText(text_content, "plain", "utf-8"))
+    msg.attach(MIMEText(html_content, "html", "utf-8"))
 
     try:
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
