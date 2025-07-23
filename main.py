@@ -17,7 +17,7 @@ AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
 DIVAR_URL = "https://api.divar.ir/v8/postlist/w/search"
 HEADERS = {
     "Content-Type": "application/json",
-    "Authorization": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiI5MTk4OWY5MS0xZDE3LTQzNzEtODI5NS04NTJhMjlkYTU3OWUiLCJ1aWQiOiI4OWU4ZjI2ZC03ZTI1LTQwZmEtYWVmZC0wY2FhMmYwZjBmNzQiLCJ1c2VyIjoiMDkzNzk0NTUwODgiLCJ2ZXJpZmllZF90aW1lIjoxNzUzMTg5ODE2LCJpc3MiOiJhdXRoIiwidXNlci10eXBlIjoicGVyc29uYWwiLCJ1c2VyLXR5cGUtZmEiOiLZvtmG2YQg2LTYrti124wiLCJleHAiOjE3NTU3ODE4MTYsImlhdCI6MTc1MzE4OTgxNn0.TFyOnW61H3uVZN6LgMkKb4jUQm3tTtUTh_ZKrP_71Q4",
+    "Authorization": AUTH_TOKEN,
     "User-Agent": "Mozilla/5.0",
 }
 
@@ -132,8 +132,8 @@ def send_email(new_ads):
                 <img src="{ad['image_url']}" alt="تصویر آگهی" style="width:120px; height:auto; vertical-align:middle; border-radius:5px; margin-left:10px;">
                 <strong>{ad['title']}</strong><br>
                 {ad['district']} - {ad['city']}<br>
-                <span style="color: #d9534f; font-weight: bold;">ودیعه: {ad['deposit']}</span><br>
-                <span style="color: #5cb85c; font-weight: bold;">اجاره: {ad['rent']}</span>
+                <span style="color: #d9534f; font-weight: bold;">{ad['deposit']}</span><br>
+                <span style="color: #5cb85c; font-weight: bold;">{ad['rent']}</span>
             </a>
         </li>
         """
