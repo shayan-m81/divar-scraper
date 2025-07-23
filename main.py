@@ -28,7 +28,14 @@ HEADERS = {
 }
 
 SEEN_FILE = "seen_ads.json"
-FILTER_KEYWORDS = ["همخونه", "هم‌خونه"]
+FILTER_KEYWORDS = [
+    "همخونه",
+    "هم‌خونه",
+    "هم خانه",
+    "هم خونه",
+    "همخانه",
+    "هم‌خانه",
+]
 
 
 def load_seen():
