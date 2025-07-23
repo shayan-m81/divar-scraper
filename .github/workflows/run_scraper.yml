@@ -25,7 +25,7 @@ jobs:
 
       - name: Download seen_ads.json (if exists)
         continue-on-error: true
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4 
         with:
           name: seen-ads
           path: .
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload seen_ads.json
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 
         with:
           name: seen-ads
           path: seen_ads.json
