@@ -7,13 +7,13 @@
     "map_state": {
         "camera_info": {
             "bbox": {
-                "min_latitude": 35.608599,
+                "min_latitude": 35.574782,
                 "min_longitude": 51.409522,
-                "max_latitude": 35.849355,
+                "max_latitude": 35.883055,
                 "max_longitude": 51.603184
             },
             "place_hash": "1||apartment-rent",
-            "zoom": 11.062364116293598
+            "zoom": 10.705730343407511
         },
         "page_state": "HALF_STATE"
     },
@@ -48,6 +48,11 @@
                         "value": [
                             "}uyxEsmayHiJ`@}ErHwnAkEg^qGov@sX{YiS}_@kd@kp@ui@}mB}|@k]ea@pHkrDtZuvCvg@epCrNsXzYeQzLgCpu@bAtTvJlIbQjI|\\mBty@pAlrDtG||@pHpWl\\pg@flBpeB~Kty@bE~lApNhcA`L~N"
                         ]
+                    }
+                },
+                "recent_ads": {
+                    "str": {
+                        "value": "3h"
                     }
                 },
                 "rent": {
