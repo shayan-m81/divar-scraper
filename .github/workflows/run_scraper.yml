@@ -1,4 +1,4 @@
-name: Run Divar Scraper Every 12 Hours
+name: Run Divar Scraper Every 3 Hours
 
 on:
   schedule:
