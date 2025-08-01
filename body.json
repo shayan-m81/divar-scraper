@@ -7,13 +7,13 @@
     "map_state": {
         "camera_info": {
             "bbox": {
-                "min_latitude": 35.574782,
-                "min_longitude": 51.409522,
-                "max_latitude": 35.883055,
-                "max_longitude": 51.603184
+                "min_latitude": 35.688304,
+                "min_longitude": 51.435059,
+                "max_latitude": 35.760741,
+                "max_longitude": 51.554161
             },
-            "place_hash": "1||apartment-rent",
-            "zoom": 10.705730343407511
+            "place_hash": "1||residential-rent",
+            "zoom": 12.795212499593507
         },
         "page_state": "HALF_STATE"
     },
@@ -24,16 +24,16 @@
                     "repeated_float": {
                         "value": [
                             {
-                                "value": 51.409523
+                                "value": 51.4350586
                             },
                             {
-                                "value": 35.6086
+                                "value": 35.6883049
                             },
                             {
-                                "value": 51.6031837
+                                "value": 51.5541611
                             },
                             {
-                                "value": 35.8493538
+                                "value": 35.7607422
                             }
                         ]
                     }
@@ -46,7 +46,7 @@
                 "multi_geo_polygon_encoded": {
                     "repeated_string": {
                         "value": [
-                            "}uyxEsmayHiJ`@}ErHwnAkEg^qGov@sX{YiS}_@kd@kp@ui@}mB}|@k]ea@pHkrDtZuvCvg@epCrNsXzYeQzLgCpu@bAtTvJlIbQjI|\\mBty@pAlrDtG||@pHpWl\\pg@flBpeB~Kty@bE~lApNhcA`L~N"
+                            "{`}xEkx`yHen@qDsUaGqXaOgx@{dAsj@igAqQg@cZ}P_DukA^eqAnF{b@pF_cApQwy@nIcJbUaBbj@rGpKxE`MtOnBdMpMhHnCrGpGps@r[fqAr^v_@n@hHaFpLOfMpGz]~EdEnBy@pJ`OoA|z@pS~oAN~SoGh]aEhH_I|C"
                         ]
                     }
                 },
@@ -60,21 +60,24 @@
                         "maximum": "10000000"
                     }
                 },
-                "sort": {
-                    "str": {
-                        "value": "sort_date"
-                    }
-                },
                 "category": {
                     "str": {
-                        "value": "apartment-rent"
+                        "value": "residential-rent"
                     }
                 }
             }
         },
         "server_payload": {
             "@type": "type.googleapis.com/widgets.SearchData.ServerPayload",
-            "additional_form_data": {}
+            "additional_form_data": {
+                "data": {
+                    "sort": {
+                        "str": {
+                            "value": "sort_date"
+                        }
+                    }
+                }
+            }
         }
     }
 }
