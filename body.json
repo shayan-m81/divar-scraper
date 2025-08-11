@@ -7,13 +7,13 @@
     "map_state": {
         "camera_info": {
             "bbox": {
-                "min_latitude": 35.688304,
-                "min_longitude": 51.435059,
-                "max_latitude": 35.760741,
-                "max_longitude": 51.554161
+                "min_latitude": 35.610782623291016,
+                "min_longitude": 51.269107818603516,
+                "max_latitude": 35.7819938659668,
+                "max_longitude": 51.49714279174805
             },
-            "place_hash": "1||residential-rent",
-            "zoom": 12.795212499593507
+            "place_hash": "1|145,146,148,155,157,158,159,160,170,172,173,174,243,4133,82,920|residential-rent",
+            "zoom": 11.554751656967943
         },
         "page_state": "HALF_STATE"
     },
@@ -24,40 +24,55 @@
                     "repeated_float": {
                         "value": [
                             {
-                                "value": 51.4350586
+                                "value": 51.2691078
                             },
                             {
-                                "value": 35.6883049
+                                "value": 35.6107826
                             },
                             {
-                                "value": 51.5541611
+                                "value": 51.4971428
                             },
                             {
-                                "value": 35.7607422
+                                "value": 35.7819939
                             }
                         ]
                     }
                 },
                 "credit": {
                     "number_range": {
-                        "maximum": "100000000"
+                        "maximum": "200000000"
                     }
                 },
-                "multi_geo_polygon_encoded": {
+                "districts": {
                     "repeated_string": {
                         "value": [
-                            "{`}xEkx`yHen@qDsUaGqXaOgx@{dAsj@igAqQg@cZ}P_DukA^eqAnF{b@pF_cApQwy@nIcJbUaBbj@rGpKxE`MtOnBdMpMhHnCrGpGps@r[fqAr^v_@n@hHaFpLOfMpGz]~EdEnBy@pJ`OoA|z@pS~oAN~SoGh]aEhH_I|C"
+                            "145",
+                            "146",
+                            "148",
+                            "155",
+                            "157",
+                            "158",
+                            "159",
+                            "160",
+                            "170",
+                            "172",
+                            "173",
+                            "174",
+                            "243",
+                            "4133",
+                            "82",
+                            "920"
                         ]
                     }
                 },
                 "recent_ads": {
                     "str": {
-                        "value": "3h"
+                        "value": "12h"
                     }
                 },
                 "rent": {
                     "number_range": {
-                        "maximum": "10000000"
+                        "maximum": "15000000"
                     }
                 },
                 "category": {
