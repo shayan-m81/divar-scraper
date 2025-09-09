@@ -7,13 +7,13 @@
     "map_state": {
         "camera_info": {
             "bbox": {
-                "min_latitude": 35.71235656738281,
-                "min_longitude": 51.269107818603516,
-                "max_latitude": 35.7819938659668,
-                "max_longitude": 51.35043716430664
+                "min_latitude": 35.720457,
+                "min_longitude": 51.24425,
+                "max_latitude": 35.794793,
+                "max_longitude": 51.366524
             },
-            "place_hash": "1|145,146,148,155,157,158,159,160,170,172,173,174,4133,82,920|residential-rent",
-            "zoom": 11.96991427381084
+            "place_hash": "1||residential-rent",
+            "zoom": 12.75728792734482
         },
         "page_state": "HALF_STATE"
     },
@@ -24,54 +24,45 @@
                     "repeated_float": {
                         "value": [
                             {
-                                "value": 51.2691078
+                                "value": 51.256218
                             },
                             {
-                                "value": 35.7123566
+                                "value": 35.7204552
                             },
                             {
-                                "value": 51.3504372
+                                "value": 51.3545532
                             },
                             {
-                                "value": 35.7819939
+                                "value": 35.7947922
                             }
                         ]
                     }
                 },
                 "credit": {
                     "number_range": {
-                        "maximum": "200000000"
+                        "maximum": "900000000"
                     }
                 },
-                "districts": {
+                "multi_geo_polygon_encoded": {
                     "repeated_string": {
                         "value": [
-                            "145",
-                            "146",
-                            "148",
-                            "155",
-                            "157",
-                            "158",
-                            "159",
-                            "160",
-                            "170",
-                            "172",
-                            "173",
-                            "174",
-                            "4133",
-                            "82",
-                            "920"
+                            "yhbyEwsaxHiC`CaG?eOsFuWw@eNR_IxDcOjAcPoB_bAe@gWcdAyUmk@qFgf@{g@w@eDyNfCkq@k^w@eD_PiCw@~HRbOaF`H?ru@}O|H?l]fK~QtCrYd@|RvGnH`MNl]kB`WsEhR{@xU~QjHpGe@t`@lEpZd@|\\xNdEpItEhj@?xDiBQOh\\uDdG"
                         ]
+                    }
+                },
+                "parking": {
+                    "boolean": {
+                        "value": true
                     }
                 },
                 "recent_ads": {
                     "str": {
-                        "value": "12h"
+                        "value": "3h"
                     }
                 },
                 "rent": {
                     "number_range": {
-                        "maximum": "15000000"
+                        "maximum": "21000000"
                     }
                 },
                 "category": {
